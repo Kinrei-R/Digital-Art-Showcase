@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gallery — Her</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        her<span>.</span>
+    </a>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="gallery.html" class="active">
+            Gallery
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+    </nav>
+
+    <button class="menu-btn" id="menuBtn">
+        <span></span>
+        <span></span>
+    </button>
+
+</header>
+
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+
+</div>
+
+
+<main class="gallery-page">
+
+
+    <section class="page-intro">
+
+        <p class="small-label">
+            THE COLLECTION
+        </p>
+
+        <h1>
+            Her <i>gallery.</i>
+        </h1>
+
+        <p>
+            A collection of drawings, characters,
+            sketches and moments.
+        </p>
+
+    </section>
+
+
+    <!-- FILTERS -->
+
+    <div class="filters">
+
+        <button class="filter active" data-filter="all">
+            All
+        </button>
+
+        <button class="filter" data-filter="digital">
+            Digital
+        </button>
+
+        <button class="filter" data-filter="sketch">
+            Sketches
+        </button>
+
+        <button class="filter" data-filter="portrait">
+            Portraits
+        </button>
+
+    </div>
+
+
+    <!-- ARTWORK GRID -->
+
+    <section class="gallery-grid">
+
+
+        <article class="gallery-card tall" data-category="digital">
+
+            <div class="gallery-image">
+
+                <img src="images/art-01.jpg" alt="Artwork">
+
+                <button
+                    class="view-button"
+                    data-image="images/art-01.jpg"
+                    data-title="Untitled I"
+                >
+                    View
+                </button>
+
+            </div>
+
+            <div class="gallery-info">
+
+                <span>01</span>
+
+                <div>
+                    <h3>Untitled I</h3>
+                    <p>Digital illustration</p>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="gallery-card" data-category="sketch">
+
+            <div class="gallery-image">
+
+                <img src="images/art-02.jpg" alt="Artwork">
+
+                <button
+                    class="view-button"
+                    data-image="images/art-02.jpg"
+                    data-title="A Quiet Moment"
+                >
+                    View
+                </button>
+
+            </div>
+
+            <div class="gallery-info">
+
+                <span>02</span>
+
+                <div>
+                    <h3>A Quiet Moment</h3>
+                    <p>Sketch</p>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="gallery-card" data-category="portrait">
+
+            <div class="gallery-image">
+
+                <img src="images/art-03.jpg" alt="Artwork">
+
+                <button
+                    class="view-button"
+                    data-image="images/art-03.jpg"
+                    data-title="Her"
+                >
+                    View
+                </button>
+
+            </div>
+
+            <div class="gallery-info">
+
+                <span>03</span>
+
+                <div>
+                    <h3>Her</h3>
+                    <p>Portrait</p>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="gallery-card wide" data-category="digital">
+
+            <div class="gallery-image">
+
+                <img src="images/art-04.jpg" alt="Artwork">
+
+                <button
+                    class="view-button"
+                    data-image="images/art-04.jpg"
+                    data-title="After Rain"
+                >
+                    View
+                </button>
+
+            </div>
+
+            <div class="gallery-info">
+
+                <span>04</span>
+
+                <div>
+                    <h3>After Rain</h3>
+                    <p>Digital illustration</p>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="gallery-card" data-category="sketch">
+
+            <div class="gallery-image">
+
+                <img src="images/art-05.jpg" alt="Artwork">
+
+                <button
+                    class="view-button"
+                    data-image="images/art-05.jpg"
+                    data-title="Thoughts"
+                >
+                    View
+                </button>
+
+            </div>
+
+            <div class="gallery-info">
+
+                <span>05</span>
+
+                <div>
+                    <h3>Thoughts</h3>
+                    <p>Sketch</p>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="gallery-card" data-category="digital">
+
+            <div class="gallery-image">
+
+                <img src="images/art-06.jpg" alt="Artwork">
+
+                <button
+                    class="view-button"
+                    data-image="images/art-06.jpg"
+                    data-title="Somewhere"
+                >
+                    View
+                </button>
+
+            </div>
+
+            <div class="gallery-info">
+
+                <span>06</span>
+
+                <div>
+                    <h3>Somewhere</h3>
+                    <p>Digital art</p>
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">
+        her<span>.</span>
+    </div>
+
+    <p>
+        A collection of drawings & little worlds.
+    </p>
+
+</footer>
+
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+
+    <button class="close-lightbox" id="closeLightbox">
+        ×
+    </button>
+
+    <div class="lightbox-inner">
+
+        <img id="lightboxImage" src="" alt="Artwork">
+
+        <div id="lightboxTitle"></div>
+
+    </div>
+
+</div>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

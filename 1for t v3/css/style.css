@@ -1,0 +1,1453 @@
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --cream: #f7f4ed;
+    --paper: #ece7dc;
+
+    --olive: #666b50;
+    --olive-dark: #4d513d;
+
+    --sage: #899078;
+
+    --pink: #d8b9b7;
+    --pink-dark: #b99693;
+
+    --brown: #514a40;
+    --brown-light: #81796e;
+
+    --ink: #282820;
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    background: var(--cream);
+
+    color: var(--ink);
+
+    font-family: "DM Sans", sans-serif;
+
+    font-weight: 300;
+
+    overflow-x: hidden;
+
+}
+
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 75px;
+
+    padding: 0 7vw;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    z-index: 100;
+
+    background: rgba(247,244,237,.82);
+
+    backdrop-filter: blur(12px);
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+}
+
+
+.brand-dot {
+
+    width: 23px;
+    height: 23px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 40%,
+            #f2dfe1,
+            #c5a6aa
+        );
+
+}
+
+
+.navbar nav {
+
+    display: flex;
+
+    gap: 28px;
+
+}
+
+
+.navbar nav a {
+
+    font-size: 10px;
+
+    color: var(--brown);
+
+    transition: .3s;
+
+}
+
+
+.navbar nav a:hover {
+
+    color: var(--pink-dark);
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    min-height: 100vh;
+
+    padding: 130px 10vw 70px;
+
+    display: grid;
+
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 5vw;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* =====================================================
+   HERO TEXT
+===================================================== */
+
+.hero-copy {
+
+    position: relative;
+
+    z-index: 5;
+
+}
+
+
+.hero-category {
+
+    font-size: 10px;
+
+    margin-bottom: 25px;
+
+    color: var(--olive-dark);
+
+}
+
+
+.hero-copy h1 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(70px, 8vw, 125px);
+
+    line-height: .78;
+
+    letter-spacing: -5px;
+
+    font-weight: 500;
+
+}
+
+
+.hero-copy h1 i {
+
+    color: var(--olive);
+
+    font-style: italic;
+
+}
+
+
+.hero-description {
+
+    max-width: 330px;
+
+    color: var(--brown-light);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    margin: 35px 0;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 11px 15px;
+
+    border: 1px solid #aaa397;
+
+    font-size: 10px;
+
+    transition: .3s;
+
+}
+
+
+.button.primary {
+
+    background: var(--ink);
+
+    border-color: var(--ink);
+
+    color: var(--cream);
+
+}
+
+
+.button.primary:hover {
+
+    background: var(--olive);
+
+    border-color: var(--olive);
+
+}
+
+
+.button.secondary:hover {
+
+    background: var(--paper);
+
+}
+
+
+.hero-socials {
+
+    display: flex;
+
+    gap: 18px;
+
+    margin-top: 45px;
+
+}
+
+
+.hero-socials a {
+
+    font-size: 9px;
+
+    color: var(--brown-light);
+
+    border-bottom: 1px solid #c9c2b5;
+
+    padding-bottom: 3px;
+
+}
+
+
+/* =====================================================
+   HERO ART
+===================================================== */
+
+.hero-visual {
+
+    position: relative;
+
+    z-index: 3;
+
+}
+
+
+.hero-art-wrapper {
+
+    width: min(100%, 620px);
+
+    margin-left: auto;
+
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+
+.hero-art-wrapper::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 15px;
+
+    border: 1px solid rgba(255,255,255,.35);
+
+    pointer-events: none;
+
+}
+
+
+.hero-art {
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    transition: transform 1.2s ease;
+
+}
+
+
+.hero-art-wrapper:hover .hero-art {
+
+    transform: scale(1.03);
+
+}
+
+
+/* =====================================================
+   ART LABEL
+===================================================== */
+
+.art-label {
+
+    width: min(100%, 620px);
+
+    margin-left: auto;
+
+    padding-top: 12px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+}
+
+
+.art-label > span {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+    color: var(--pink-dark);
+
+}
+
+
+.art-label strong {
+
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 17px;
+
+}
+
+
+.art-label small {
+
+    color: var(--brown-light);
+
+    font-size: 9px;
+
+}
+
+
+/* =====================================================
+   FLOATING NOTE
+===================================================== */
+
+.floating-note {
+
+    position: absolute;
+
+    left: -30px;
+
+    bottom: 80px;
+
+    width: 115px;
+
+    height: 115px;
+
+    border-radius: 50%;
+
+    background: var(--pink);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    transform: rotate(-8deg);
+
+    z-index: 5;
+
+}
+
+
+.floating-note span {
+
+    font-size: 20px;
+
+    color: var(--cream);
+
+}
+
+
+.floating-note p {
+
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 14px;
+
+    line-height: 1;
+
+}
+
+
+/* =====================================================
+   BACKGROUND ORBS
+===================================================== */
+
+.hero-orb {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(1px);
+
+}
+
+
+.orb-one {
+
+    width: 400px;
+    height: 400px;
+
+    background: rgba(216,185,183,.15);
+
+    top: 5%;
+
+    right: -150px;
+
+}
+
+
+.orb-two {
+
+    width: 250px;
+    height: 250px;
+
+    background: rgba(102,107,80,.10);
+
+    bottom: -100px;
+
+    left: 20%;
+
+}
+
+
+/* =====================================================
+   SCROLL INDICATOR
+===================================================== */
+
+.scroll-indicator {
+
+    position: absolute;
+
+    bottom: 35px;
+
+    left: 10vw;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: var(--brown-light);
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+}
+
+
+.scroll-line {
+
+    width: 50px;
+
+    height: 1px;
+
+    background: var(--brown-light);
+
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro-section {
+
+    min-height: 90vh;
+
+    background: var(--paper);
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 12vw 12vw;
+
+    overflow: hidden;
+
+}
+
+
+.intro-background-text {
+
+    position: absolute;
+
+    left: -3vw;
+
+    top: 20%;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 17vw;
+
+    color: rgba(102,107,80,.055);
+
+    white-space: nowrap;
+
+    pointer-events: none;
+
+}
+
+
+.intro-content {
+
+    max-width: 900px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.section-number {
+
+    color: var(--olive);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.intro-content h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 105px);
+
+    line-height: .88;
+
+    letter-spacing: -3px;
+
+    margin: 45px 0;
+
+}
+
+
+.intro-content h2 i {
+
+    color: var(--olive);
+
+}
+
+
+.intro-description {
+
+    width: 350px;
+
+    margin-left: 45%;
+
+    color: var(--brown-light);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+}
+
+
+/* =====================================================
+   PARALLAX GALLERY
+===================================================== */
+
+.parallax-gallery {
+
+    min-height: 130vh;
+
+    background: var(--cream);
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding-top: 10vw;
+
+}
+
+
+.parallax-title {
+
+    position: relative;
+
+    z-index: 10;
+
+    margin-left: 10vw;
+
+}
+
+
+.parallax-title p {
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: var(--olive);
+
+}
+
+
+.parallax-title h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(60px, 8vw, 120px);
+
+    line-height: .8;
+
+    margin-top: 30px;
+
+}
+
+
+.parallax-title h2 i {
+
+    color: var(--olive);
+
+}
+
+
+/* =====================================================
+   PARALLAX CANVAS
+===================================================== */
+
+.parallax-canvas {
+
+    height: 100vh;
+
+    position: relative;
+
+    margin-top: -80px;
+
+}
+
+
+.floating-art {
+
+    position: absolute;
+
+    overflow: hidden;
+
+}
+
+
+.floating-art img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.art-a {
+
+    width: 260px;
+
+    height: 340px;
+
+    top: 15%;
+
+    left: 7%;
+
+    transform: rotate(-8deg);
+
+}
+
+
+.art-b {
+
+    width: 300px;
+
+    height: 230px;
+
+    top: 28%;
+
+    right: 9%;
+
+    transform: rotate(7deg);
+
+}
+
+
+.art-c {
+
+    width: 220px;
+
+    height: 290px;
+
+    bottom: 5%;
+
+    left: 28%;
+
+    transform: rotate(5deg);
+
+}
+
+
+.art-d {
+
+    width: 260px;
+
+    height: 320px;
+
+    bottom: 8%;
+
+    right: 28%;
+
+    transform: rotate(-5deg);
+
+}
+
+
+.center-message {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform: translate(-50%,-50%);
+
+    width: 190px;
+
+    height: 190px;
+
+    border-radius: 50%;
+
+    background: var(--olive-dark);
+
+    color: var(--cream);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+}
+
+
+.center-message span {
+
+    color: var(--pink);
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.center-message p {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 17px;
+
+    line-height: 1.1;
+
+}
+
+
+/* =====================================================
+   HORIZONTAL GALLERY
+===================================================== */
+
+.horizontal-section {
+
+    background: var(--olive-dark);
+
+    color: var(--cream);
+
+    padding: 12vw 0;
+
+    overflow: hidden;
+
+}
+
+
+.horizontal-heading {
+
+    padding-left: 10vw;
+
+    margin-bottom: 80px;
+
+}
+
+
+.horizontal-heading p {
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: var(--pink);
+
+}
+
+
+.horizontal-heading h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(60px, 8vw, 120px);
+
+    line-height: .8;
+
+    margin-top: 30px;
+
+}
+
+
+.horizontal-heading h2 i {
+
+    color: var(--pink);
+
+}
+
+
+/* =====================================================
+   HORIZONTAL TRACK
+===================================================== */
+
+.horizontal-track {
+
+    display: flex;
+
+    gap: 45px;
+
+    padding-left: 10vw;
+
+    width: max-content;
+
+}
+
+
+.gallery-card {
+
+    width: 420px;
+
+    flex-shrink: 0;
+
+}
+
+
+.gallery-image {
+
+    overflow: hidden;
+
+    background: #555a43;
+
+}
+
+
+.gallery-image img {
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    transition: transform .8s ease;
+
+}
+
+
+.gallery-card:hover img {
+
+    transform: scale(1.04);
+
+}
+
+
+.gallery-info {
+
+    display: flex;
+
+    gap: 20px;
+
+    padding-top: 15px;
+
+}
+
+
+.gallery-info > span {
+
+    color: var(--pink);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+}
+
+
+.gallery-info h3 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 26px;
+
+}
+
+
+.gallery-info p {
+
+    color: #b7b7a9;
+
+    font-size: 9px;
+
+}
+
+
+/* =====================================================
+   QUOTE
+===================================================== */
+
+.quote-section {
+
+    padding: 15vw 15vw;
+
+    text-align: center;
+
+}
+
+
+.quote-decoration {
+
+    color: var(--pink-dark);
+
+    font-size: 35px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.quote-section h2 {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 105px);
+
+    line-height: .88;
+
+}
+
+
+.quote-section h2 i {
+
+    color: var(--olive);
+
+}
+
+
+.quote-section p {
+
+    margin-top: 40px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: var(--brown-light);
+
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-section {
+
+    padding: 15vw 20px;
+
+    text-align: center;
+
+    background: var(--paper);
+
+}
+
+
+.contact-section > p {
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: var(--olive);
+
+}
+
+
+.contact-section h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(70px, 9vw, 130px);
+
+    line-height: .8;
+
+    margin: 45px 0 60px;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    padding: 35px 7vw;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 10px;
+
+    color: var(--brown-light);
+
+    border-top: 1px solid #d5cdbf;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+.menu-btn {
+
+    display: none;
+
+}
+
+
+.mobile-menu {
+
+    display: none;
+
+}
+
+
+@media(max-width: 800px) {
+
+
+    .navbar {
+
+        padding: 0 25px;
+
+    }
+
+
+    .navbar nav {
+
+        display: none;
+
+    }
+
+
+    .menu-btn {
+
+        display: block;
+
+        border: none;
+
+        background: none;
+
+        width: 30px;
+
+    }
+
+
+    .menu-btn span {
+
+        display: block;
+
+        height: 1px;
+
+        background: var(--ink);
+
+        margin: 7px 0;
+
+    }
+
+
+    .mobile-menu {
+
+        position: fixed;
+
+        inset: 0;
+
+        z-index: 90;
+
+        background: var(--cream);
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 30px;
+
+        opacity: 0;
+
+        pointer-events: none;
+
+        transition: .4s;
+
+    }
+
+
+    .mobile-menu.open {
+
+        opacity: 1;
+
+        pointer-events: auto;
+
+    }
+
+
+    .mobile-menu a {
+
+        font-family: "Cormorant Garamond", serif;
+
+        font-size: 55px;
+
+    }
+
+
+    .hero {
+
+        display: flex;
+
+        flex-direction: column;
+
+        padding: 130px 25px 80px;
+
+        gap: 55px;
+
+    }
+
+
+    .hero-copy h1 {
+
+        font-size: 75px;
+
+    }
+
+
+    .hero-visual {
+
+        width: 100%;
+
+    }
+
+
+    .floating-note {
+
+        left: -10px;
+
+        bottom: 60px;
+
+        width: 90px;
+
+        height: 90px;
+
+    }
+
+
+    .intro-section {
+
+        padding: 25vw 25px;
+
+        min-height: 90vh;
+
+    }
+
+
+    .intro-content h2 {
+
+        font-size: 60px;
+
+    }
+
+
+    .intro-description {
+
+        margin-left: 0;
+
+        width: auto;
+
+    }
+
+
+    .parallax-gallery {
+
+        min-height: 100vh;
+
+    }
+
+
+    .parallax-title {
+
+        margin-left: 25px;
+
+    }
+
+
+    .parallax-canvas {
+
+        height: 80vh;
+
+    }
+
+
+    .art-a {
+
+        width: 150px;
+
+        height: 200px;
+
+        left: 5%;
+
+    }
+
+
+    .art-b {
+
+        width: 170px;
+
+        height: 140px;
+
+        right: 3%;
+
+    }
+
+
+    .art-c {
+
+        width: 140px;
+
+        height: 180px;
+
+        left: 12%;
+
+    }
+
+
+    .art-d {
+
+        width: 150px;
+
+        height: 190px;
+
+        right: 10%;
+
+    }
+
+
+    .center-message {
+
+        width: 140px;
+
+        height: 140px;
+
+    }
+
+
+    .horizontal-section {
+
+        padding: 25vw 0;
+
+    }
+
+
+    .horizontal-heading {
+
+        padding-left: 25px;
+
+    }
+
+
+    .gallery-card {
+
+        width: 280px;
+
+    }
+
+
+    .horizontal-track {
+
+        padding-left: 25px;
+
+    }
+
+
+    footer {
+
+        flex-wrap: wrap;
+
+        gap: 20px;
+
+        padding: 30px 25px;
+
+    }
+
+}
